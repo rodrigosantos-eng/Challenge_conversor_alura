@@ -29,7 +29,7 @@ public class Main{
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
 
         JsonObject obj = new Gson().fromJson(response.body(), JsonObject.class);
-        Double taxaConversao = obj.getAsJsonPrimitive("conversion_rate").getAsDouble();
+        double taxaConversao = obj.getAsJsonPrimitive("conversion_rate").getAsDouble();
         System.out.println("A conversão de " + moedaBase + " para " + moedaAlvo + " é: " + taxaConversao);
     }
 }
